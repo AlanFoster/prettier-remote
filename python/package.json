@@ -1,0 +1,21 @@
+{
+  "name": "prettier-remote",
+  "version": "0.1.0",
+  "description": "Run prettier with the python plugin remotely",
+  "main": "server",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prettier/prettier-remote.git"
+  },
+  "author": "Kevin Deisz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prettier/prettier-remote/issues"
+  },
+  "homepage": "https://github.com/prettier/prettier-remote#readme",
+  "dependencies": {
+    "@prettier/plugin-python": "^0.0.0-development",
+    "express": "^4.16.4",
+    "prettier": "^1.16.4"
+  }
+}
