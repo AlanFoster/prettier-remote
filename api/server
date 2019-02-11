@@ -1,0 +1,49 @@
+#!/usr/bin/env node
+
+const express = require("express");
+const fetch = require("node-fetch");
+
+const app = express();
+const langs = ["python", "ruby"];
+
+const format = ({ code, lang, opts = {} }) => {
+  if (!langs.includes(lang)) {
+    return Promise.reject(new Error(`Invalid lang: ${lang}`));
+  }
+
+  const fetchOpts = {
+    method: "POST",
+    body: JSON.stringify({ code, opts }),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+
+  return fetch(`http://${lang}:8080`, fetchOpts).then(res => res.json());
+};
+
+app.use((req, res, next) => {
+  console.log(`[${new Date().toUTCString()}] ${req.method} ${req.path}`);
+
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "OPTIONS, POST");
+
+  next();
+});
+
+app.post("/", (req, res) => {
+  const data = [];
+
+  req.on("data", chunk => data.push(chunk));
+  req.on("end", () => {
+    format(JSON.parse(data))
+      .then(code => {
+        res.status(201).send(code);
+      })
+      .catch(error => {
+        res.status(422).send({ error: error.message });
+      });
+  });
+});
+
+app.listen(8080, () => console.log("Listening on 8080..."));
