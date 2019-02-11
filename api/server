@@ -6,7 +6,7 @@ const fetch = require("node-fetch");
 const app = express();
 const langs = ["python", "ruby"];
 
-const format = ({ code, lang, opts = {} }) => {
+const format = ({ code, lang, opts }) => {
   if (!langs.includes(lang)) {
     return Promise.reject(new Error(`Invalid lang: ${lang}`));
   }
@@ -36,9 +36,11 @@ app.post("/", (req, res) => {
 
   req.on("data", chunk => data.push(chunk));
   req.on("end", () => {
-    format(JSON.parse(data))
-      .then(code => {
-        res.status(201).send(code);
+    const { code, lang, opts = {} } = JSON.parse(data);
+
+    format({ code, lang, opts })
+      .then(result => {
+        res.status(201).send({ ...result, lang });
       })
       .catch(error => {
         res.status(422).send({ error: error.message });

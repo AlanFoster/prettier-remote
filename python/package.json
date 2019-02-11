@@ -5,14 +5,14 @@
   "main": "server",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prettier/prettier-remote.git"
+    "url": "git+https://github.com/kddeisz/prettier-remote.git"
   },
   "author": "Kevin Deisz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/prettier/prettier-remote/issues"
+    "url": "https://github.com/kddeisz/prettier-remote/issues"
   },
-  "homepage": "https://github.com/prettier/prettier-remote#readme",
+  "homepage": "https://github.com/kddeisz/prettier-remote#readme",
   "dependencies": {
     "@prettier/plugin-python": "^0.0.0-development",
     "express": "^4.16.4",
