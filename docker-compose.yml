@@ -4,14 +4,13 @@ services:
     build: api
     ports:
     - "8080:8080"
+    command:
+      - "./server"
     depends_on:
-    - python
     - ruby
-  python:
-    build: python
-    ports:
-    - "8081:8080"
   ruby:
     build: ruby
     ports:
      - "8082:8080"
+    command:
+      - "./server"

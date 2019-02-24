@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@prettier/plugin-ruby@^0.3.7":
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.3.7.tgz#6878145d7960a3db577ed6b2ad264cf3d8304cc0"
-  integrity sha512-mjsOvpm+hkDaarCIg1S6CM2IcYlWrmxDBw2wog2P0gAs1XUyF1+IyT0pWOLG0dE7MYnN05jV60BTqSVzAI8+Ow==
+"@prettier/plugin-ruby@^0.6.3":
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.6.3.tgz#8c601fecb0541b40055e4d408c8d19b50429144c"
+  integrity sha512-PoMkbqgwcjdtww8TycFD+h2zh+citE7Xbx287XR/hEtgfvleRlpdDK/4FjX4qlf1ouCqsSBHara/vFMDQjqg2w==
   dependencies:
     prettier "^1.16.4"
 
@@ -22,7 +22,7 @@ array-flatten@1.1.1:
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
   integrity sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
 
-body-parser@1.18.3:
+body-parser@1.18.3, body-parser@^1.18.3:
   version "1.18.3"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.3.tgz#5b292198ffdd553b3a0f20ded0592b956955c8b4"
   integrity sha1-WykhmP/dVTs6DyDe0FkrlWlVyLQ=

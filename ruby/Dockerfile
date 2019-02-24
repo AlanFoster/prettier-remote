@@ -9,4 +9,3 @@ WORKDIR /code
 RUN yarn install
 
 ADD server /code/
-ENTRYPOINT ["./server"]
